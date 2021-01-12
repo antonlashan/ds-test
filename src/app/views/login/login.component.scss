@@ -1,0 +1,14 @@
+:host {
+  height: 100%;
+  display: flex;
+}
+.card {
+  max-width: 400px;
+  width: 100%;
+  margin: auto;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}

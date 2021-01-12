@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  endpoint: 'https://ds-test-api.herokuapp.com',
 };
 
 /*
