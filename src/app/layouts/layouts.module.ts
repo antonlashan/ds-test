@@ -7,11 +7,16 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 
+import { SidemenuComponent } from './_shared/sidemenu/sidemenu.component';
 import { AuthLayoutComponent } from './authenticate/authenticate.component';
 import { NonAuthLayoutComponent } from './non-authenticate/non-authenticate.component';
 
 @NgModule({
-  declarations: [AuthLayoutComponent, NonAuthLayoutComponent],
+  declarations: [
+    AuthLayoutComponent,
+    NonAuthLayoutComponent,
+    SidemenuComponent,
+  ],
   imports: [
     CommonModule,
     RouterModule,

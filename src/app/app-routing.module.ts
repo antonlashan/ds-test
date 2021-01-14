@@ -34,6 +34,13 @@ const routes: Routes = [
             (m) => m.DashboardModule
           ),
       },
+      {
+        path: 'admin-section',
+        loadChildren: () =>
+          import('./views/admin-section/admin-section.module').then(
+            (m) => m.AdminSectionModule
+          ),
+      },
     ],
   },
 ];

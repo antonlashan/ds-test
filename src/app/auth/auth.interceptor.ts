@@ -26,7 +26,7 @@ export class AuthInterceptor implements HttpInterceptor {
     }
 
     const secureReq = request.clone({
-      url: environment.endpoint + '/' + request.url,
+      url: environment.endpoint + '/api/' + request.url,
       headers,
     });
 

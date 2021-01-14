@@ -3,8 +3,11 @@ import {
   ChangeDetectionStrategy,
   OnInit,
   OnDestroy,
+  ChangeDetectorRef,
 } from '@angular/core';
 import { Subscription } from 'rxjs';
+
+import { UserAssignment } from '../../models/user-assignment.model';
 
 import { DashboardService } from './dashboard.service';
 
@@ -15,9 +18,14 @@ import { DashboardService } from './dashboard.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DashboardComponent implements OnInit, OnDestroy {
+  displayedColumns: string[] = ['id', 'image_url', 'name', 'active', 'action'];
+  dataSource: UserAssignment[] = [];
   private subs = new Subscription();
 
-  constructor(private dashboardService: DashboardService) {}
+  constructor(
+    private dashboardService: DashboardService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit() {
     this.getUserAssignments();
@@ -30,7 +38,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
   getUserAssignments() {
     this.subs.add(
       this.dashboardService.userAssignments().subscribe((res) => {
-        console.log(res);
+        this.dataSource = res;
+        this.cdr.detectChanges();
       })
     );
   }
