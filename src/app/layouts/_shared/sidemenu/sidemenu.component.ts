@@ -1,9 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 
-interface AppRoutes {
-  route: string;
-  label: string;
-}
+import { Role } from '../../../auth/auth';
+import { AppRoutes } from '../../../models/route.model';
 
 @Component({
   selector: 'app-sidemenu',
@@ -13,7 +11,7 @@ interface AppRoutes {
 })
 export class SidemenuComponent {
   routes: AppRoutes[] = [
-    { route: '/dashboard', label: 'Dashboard' },
-    { route: '/admin-section', label: 'Admin Section' },
+    { route: '/dashboard', label: 'Dashboard', allow: [] },
+    { route: '/admin-section', label: 'Admin Section', allow: [Role.admin] },
   ];
 }

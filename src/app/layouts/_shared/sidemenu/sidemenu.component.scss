@@ -1,0 +1,6 @@
+@import "../../../../theme.scss";
+
+.is-active {
+  color: mat-color($primary);
+  background-color: mat-color($primary, 100);
+}

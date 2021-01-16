@@ -7,6 +7,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 
+import { AllowedRoutesPipe } from './_shared/sidemenu/allowed-routes.pipe';
 import { SidemenuComponent } from './_shared/sidemenu/sidemenu.component';
 import { AuthLayoutComponent } from './authenticate/authenticate.component';
 import { NonAuthLayoutComponent } from './non-authenticate/non-authenticate.component';
@@ -16,6 +17,7 @@ import { NonAuthLayoutComponent } from './non-authenticate/non-authenticate.comp
     AuthLayoutComponent,
     NonAuthLayoutComponent,
     SidemenuComponent,
+    AllowedRoutesPipe,
   ],
   imports: [
     CommonModule,

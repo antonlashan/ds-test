@@ -1,5 +1,9 @@
 <mat-nav-list>
-  <a *ngFor="let r of routes" mat-list-item [routerLink]="r.route">{{
-    r.label
-  }}</a>
+  <a
+    *ngFor="let r of routes | allowedRoutes"
+    mat-list-item
+    [routerLink]="r.route"
+    [routerLinkActive]="['is-active']"
+    >{{ r.label }}</a
+  >
 </mat-nav-list>

@@ -5,8 +5,14 @@ import { DashboardComponent } from './dashboard.component';
 import { ReportComponent } from './report/report.component';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent },
-  { path: ':id', component: ReportComponent },
+  {
+    path: '',
+    component: DashboardComponent,
+  },
+  {
+    path: ':id',
+    component: ReportComponent,
+  },
 ];
 
 @NgModule({

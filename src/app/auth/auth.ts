@@ -1,8 +1,15 @@
+export enum Role {
+  user = 'User',
+  admin = 'Admin',
+}
+
+export const ROLES = [Role.user, Role.admin];
+
 export interface User {
   /* eslint-disable @typescript-eslint/naming-convention */
   first_name: string;
   last_name: string;
-  role: string;
+  role: Role;
   token: string;
   /* eslint-enable */
 }

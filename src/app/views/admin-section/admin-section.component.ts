@@ -38,7 +38,6 @@ export class AdminSectionComponent implements OnInit, OnDestroy {
   getUsers() {
     this.subs.add(
       this.adminSectionService.users().subscribe((res) => {
-        console.log(res);
         this.dataSource = res;
         this.cdr.detectChanges();
       })

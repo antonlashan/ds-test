@@ -18,10 +18,9 @@ export class AuthService {
 
   authenticate({ email, password }: LoginParams) {
     return this.http
-      .post<User>('api/login', { email, password })
+      .post<User>('login', { email, password })
       .pipe(
         tap((d) => {
-          console.log(d);
           setActiveUser(d);
         })
       );
